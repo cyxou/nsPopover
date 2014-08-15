@@ -8,7 +8,7 @@
   var $popovers = [];
   var globalId = 0;
 
-  module.directive('nsPopover', function($timeout, $templateCache, $q, $http, $compile, $document) {
+  module.directive('nsPopover', function($timeout, $templateCache, $q, $http, $compile, $document, $rootScope) {
     return {
       restrict: 'A',
       scope: true,
@@ -157,6 +157,7 @@
         elm
           .on('mouseout', function() {
             hider_.hide($popover, options.timeout);
+            $rootScope.$broadcast('nsPopover:hide');
           })
           .on('mouseover', function() {
             hider_.cancel();
@@ -165,6 +166,7 @@
         $popover
           .on('mouseout', function(e) {
             hider_.hide($popover, options.timeout);
+            $rootScope.$broadcast('nsPopover:hide');
           })
           .on('mouseover', function() {
             hider_.cancel();
