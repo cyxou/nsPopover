@@ -10,7 +10,7 @@
   "bugs": "https://github.com/nohros/nsPopover/issues",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nohros/nsPopover.git"
+    "url": "git@github.com:cyxou/nsPopover.git"
   },
   "dependencies": {},
   "devDependencies": {
